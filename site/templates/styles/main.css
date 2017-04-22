@@ -1,0 +1,430 @@
+/** 
+ * main.css
+ * 
+ * 1. General HTML tags
+ * 2. Masthead area
+ * 3. Main content and sidebar
+ * 4. Footer
+ * 5. Media queries for responsive layout
+ * 
+ */
+
+/*********************************************************************
+ * 1. General HTML tags
+ *
+ */
+
+* {
+	box-sizing: border-box; 
+}
+
+body {
+	padding: 2%;
+	max-width: 1500px; 
+	margin: 0 auto; 
+	background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , white 0px, #e3e0db 1000px) repeat scroll 0 0;
+}
+
+body, td, input[type=text], textarea {
+	/*font-family: 'Quattrocento', serif;*/
+	font-family: Helvetica, "Helvetica Neue", Arial;
+	font-size: 105%; 
+	line-height: 1.8em;
+	color: #444; 
+}
+
+img {
+	max-width: 100%; 
+}
+#logo-img{
+	margin-right: 20px;
+	width: 90px;
+	margin-bottom:-4px;
+}
+
+
+/*h2 {
+	font-weight: normal;
+}
+
+h3 {
+	border-top: 1px solid #eee; 
+	padding-top: 1em;
+	color: #777; 
+}*/
+h1{
+	font-size: 40px;
+}
+h1, h2{
+	color: #663366;
+}
+h1, h2{
+	/*border-bottom: #e0dcd5 1px solid;*/
+	line-height: 1.4em;
+}
+h1::after, h2::after{
+	height: 1px;
+    display: block;
+    width: 100%;
+    background: #e0dcd5;
+    content: '';
+	margin-top: 12px;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+	border-bottom: 1px solid #ccc; 
+}
+	a:hover,
+	.nav a:hover {
+		color: #663366;
+		border-color: #663366; 
+	}
+
+blockquote {
+	margin-left: 0;
+	padding-left: 1.5em;
+	padding-right: 2em; 
+	border-left: 4px solid #ddd; 
+	font-style: italic; 
+	color: #777; 
+}
+
+pre, code {
+	background: #eee; 
+	border: 1px solid #ddd; 
+}
+
+pre {
+	font-size: 14px; 
+	line-height: 1.4em;
+	padding: 1em;
+	border-left: 4px solid #ddd; 
+}
+
+/*********************************************************************
+ * 2. Masthead area
+ *
+ */
+
+.topnav, .topnav li {
+	list-style: none; 
+	padding: 0;
+	margin: 0;
+}
+	.topnav li {
+		float: left; 
+		margin-right: 1em;
+		margin-bottom: 1em;
+	}
+	.topnav a {
+		padding: 0.25em 0.5em;
+		text-decoration: none; 
+		display: block;
+		background: #eee; 
+		color: #333; 
+		border: 1px solid #eee; 
+	}
+	.topnav a:hover {
+		background: #ddd;
+		border-color: #ddd; 
+	}
+	.topnav li.current a {
+		background: #ccc; 
+		border-color: #ccc; 
+	}
+	.topnav li.edit a {
+		background: none; 
+	}
+
+
+form.search {
+	float: right; 
+	margin: 0;
+	width: 30%; 
+}
+	form.search input {
+		margin: 0;
+		padding: 0.25em 0.5em;
+		border: 1px solid #ccc; 
+		width: 100%; 
+	}
+	form.search button {
+		display: none; 
+	}
+
+.breadcrumbs {
+	clear: both; 
+	padding-top: 1em; 
+}
+	.breadcrumbs span:after {
+		content: ">";
+		color: #999; 
+		padding-left: 0.5em;
+		padding-right: 0.25em; 
+	}
+
+/*********************************************************************
+ * 3. Main content and sidebar
+ *
+ */
+
+#main {
+	clear: both; 
+}
+.language-holder {
+	display: block;
+	float: right;
+}
+.langlink {
+	border: 1px solid #663366;
+	font-size: 14px;
+	color: #663366;
+	width: 30px;
+	height: 30px;
+	margin-left: 5px;
+	padding: 5px;
+	transition: all ease .3s;
+}
+.langlink:hover, .langlink.selected {
+	color: #fff;
+	background: #663366;
+}
+#content {
+	width: 100%; 
+	float: left;
+	padding: 2em 4em; 
+	background-color: #fff;
+	border: #e0dcd5 1px solid;
+	border-radius: 10px;
+	margin-bottom: 30px;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+#sidebar {
+	width: 35%;
+	padding-left: 5%; 
+	float: left; 
+	padding-bottom: 2em; 
+}
+
+.nav {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none; 
+}
+	.nav .nav {
+		padding-left: 1.5em;
+		list-style: disc;
+	}
+	.nav li {
+		margin: 1em 0;
+	}
+
+	.nav-tree li {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.nav a {
+		font-weight: bold;
+	}
+
+	.nav-tree li a {
+		color: #777; 
+	}
+
+	.nav .current > a {
+		color: #333; 
+	}
+
+.align_left {
+	/* for images placed in rich text editor */ 
+	float: left;
+	margin: 0 1em 0.5em 0; 
+	position: relative;
+	top: 0.5em;
+	max-width: 50%; 
+}
+
+.align_right {
+	/* for images placed in rich text editor */ 
+	float: right;
+	margin: 0 0 0.5em 1em;
+	max-width: 50%; 
+}
+
+.align_center {
+	/* for images placed in rich text editor */ 
+	display: block;
+	margin: 1em auto; 
+	position: relative;
+	top: 0.5em;
+}
+
+figure {
+	display: table;
+	width: 1px;
+	margin: 1em 0;
+}
+
+figure img {
+	display: table-row;
+	margin-bottom: 0.5em;
+}
+
+figure figcaption {
+	display: table-row;
+	font-size: smaller;
+	color: #777;
+	line-height: 1.4em;
+}
+.column{	
+	width: 32%;
+	min-height: 400px;
+	float: left;
+	padding: 1em;
+	margin-right: 2%;
+	margin-bottom: 40px;
+	background-color: #fff;
+	border: #e0dcd5 1px solid;
+	border-radius: 10px;
+	padding: 1em 2em;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+}
+#rightcolumn{
+	margin-right: 0%;
+}
+.tile:not(:last-child) {
+	border-bottom: #e0dcd5 1px solid;
+}
+.tile h3{
+	font-weight: 400;	
+}
+.title-tile{
+	position:relative;
+	cursor: pointer;
+	padding-right: 20px;
+}
+.fa {
+	position: absolute;
+	
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 16px;
+	color: #666;
+	transition: all ease 0.3s;
+}
+
+.title-tile h3{
+	transition: all ease 0.2s;
+	
+}
+
+.title-tile h3:hover{
+	color: #663366;	
+}
+.title-tile:hover span{
+	color: #663366;	
+}
+.tile p{
+	font-size: 0.9em;
+	line-height: 1.7em;
+}
+.active h3{
+	color: #663366;
+}
+.active .fa{
+	color: #663366;
+	 
+}
+
+
+/*********************************************************************
+ * 4. Footer
+ *
+ */
+
+#footer {
+	clear: both; 
+	font-size: 80%; 
+}
+
+/*********************************************************************
+ * 5. Media queries for responsive layout
+ *
+ */
+
+
+@media only screen and (max-width: 767px) {
+	/* mobile layout */ 
+
+	body, td, textarea {
+		font-size: 100%; 
+	}
+	#content, 
+	#sidebar {
+		float: none;
+		width: 100%; 
+		padding: 1em 2em; 
+	}
+	form.search {
+		float: none; 
+		width: 100%; 
+	}
+	#content {
+		width: 100%; 
+	}
+	#sidebar {
+		border-top: 1px solid #eee;
+		padding-top: 1em; 
+	}
+	.align_left, .align_right, .align_center {
+		display: block;
+		float: none; 
+		margin: 1em auto;
+		max-width: 100%; 
+	}
+	.column{
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 20px;
+	}
+
+}
+@media only screen and (max-width: 620px) {
+	h1 {
+		font-size: 36px;
+	}
+}
+@media only screen and (max-width: 585px) {
+	/* mobile layout */ 
+
+	#logo-img{
+		margin-right: 40%;;
+	}
+	
+}
+@media only screen and (max-width: 480px) {
+	h1 {
+		font-size: 30px;
+	}
+	
+	#logo-img{
+		margin-bottom: 4px;
+	}
+}
+@media only screen and (max-width: 400px) {
+	h1 {
+		font-size: 20px;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	/* extra-wide desktop layout */ 
+	
+	body, td, textarea {
+		font-size: 115%; 
+	}
+}
